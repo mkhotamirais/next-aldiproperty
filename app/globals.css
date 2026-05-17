@@ -128,3 +128,11 @@
     @apply font-sans;
   }
 }
+
+.container {
+  @apply w-full max-w-7xl mx-auto px-4 h-full;
+}
+
+.btn {
+  @apply border;
+}
