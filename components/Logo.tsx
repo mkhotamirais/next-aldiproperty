@@ -1,5 +1,15 @@
-import React from "react";
+"use client";
+
+import { useScroll } from "@/hooks/useSctoll";
 
 export default function Logo() {
-  return <div>Logo</div>;
+  const isScrolled = useScroll(50);
+
+  return (
+    <div className={`${!isScrolled ? "text-white" : ""} text-center font-bold`}>
+      <span className="text-lg">-- ALDI --</span>
+      <br />
+      <span>PROPERTY</span>
+    </div>
+  );
 }

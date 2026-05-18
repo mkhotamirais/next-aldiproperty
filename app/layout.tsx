@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Lato, Geist } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const lato = Lato({ subsets: ["latin"], variable: "--font-sans", weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", "font-sans", geist.variable)}>
+    <html lang="en" className={cn("h-full", "antialiased", "font-sans", "scroll-smooth", lato.variable)}>
       <body className="min-h-full flex flex-col">
         <Header />
         <div className="grow">{children}</div>
