@@ -8,7 +8,7 @@ export default function Logo() {
   return (
     // <div className={`${!isScrolled ? "text-white" : ""} text-center font-bold`}>
     <div className={`text-center font-bold`}>
-      <span className="text-lg">-- ALDI --</span>
+      <span className="text-lg tracking-wider">ALDI</span>
       <br />
       <span>PROPERTY</span>
     </div>
