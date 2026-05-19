@@ -5,7 +5,7 @@ const heroImage = imageUrls.hero;
 
 export default function HeroSec() {
   return (
-    <section className="py-8 md:py-0 relative w-full h-auto md:h-screen overflow-hidden flex items-center">
+    <section className="py-10 md:py-0 relative w-full h-auto md:h-screen overflow-hidden flex items-center">
       {/* 1. Next.js Optimized Background Image */}
       <Image
         src={heroImage}
@@ -24,7 +24,7 @@ export default function HeroSec() {
 
       {/* 3. Konten Utama Hero */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full text-white mt-16">
-        <div className="max-w-3xl space-y-6">
+        <div className="max-w-3xl space-y-5">
           {/* Tagline / Kategori */}
           <span className="inline-block px-4 py-1.5 bg-amber-600 text-xs font-semibold tracking-widest uppercase rounded-full">
             Exclusive Townhouse
@@ -34,7 +34,7 @@ export default function HeroSec() {
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">Pranara Cilandak</h1>
 
           {/* Deskripsi Singkat */}
-          <p className="text-lg md:text-xl text-gray-200 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-200 font-light">
             Hunian eksklusif 3 lantai yang dirancang untuk keluarga modern. Perpaduan sempurna antara privasi, kualitas
             bangunan premium, dan akses strategis di kawasan prestisius Jakarta Selatan.
           </p>
@@ -58,12 +58,9 @@ export default function HeroSec() {
           </div>
 
           {/* Action Button */}
-          <div className="pt-6 flex flex-wrap gap-4">
-            <a href="#keunggulan" className="btn-primary">
-              Lihat Keunggulan Lokasi
-            </a>
-            <a href="#kontak" className="btn-secondary">
-              Hubungi Kami
+          <div className="pt-5 flex flex-wrap gap-4">
+            <a href="#gallery" className="btn-primary">
+              Jelajahi Unit Hunian
             </a>
           </div>
         </div>
