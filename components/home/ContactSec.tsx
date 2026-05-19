@@ -109,7 +109,7 @@ export default function Contact() {
               {/* Developer Info */}
               <div className="space-y-1 pt-4 border-t border-zinc-200">
                 <p className="text-xs text-zinc-400 uppercase tracking-wider font-medium">Kantor Pemasaran</p>
-                <p className="text-sm font-semibold text-zinc-800">Pranara Land Developer</p>
+                <p className="text-sm font-semibold text-zinc-800">Aldi Property</p>
                 <p className="text-sm text-zinc-600 font-light leading-relaxed">
                   Kawasan Cilandak, Kota Jakarta Selatan, <br />
                   Daerah Khusus Ibukota Jakarta.
@@ -119,7 +119,7 @@ export default function Contact() {
 
             {/* Catatan Legalitas Kecil di bagian paling bawah */}
             <div className="text-xs text-zinc-400 font-light leading-relaxed">
-              <p>© 2026 Pranara Land. Seluruh hak cipta dilindungi undang-undang.</p>
+              <p>© 2026 Aldi Property. Seluruh hak cipta dilindungi undang-undang.</p>
               <p className="mt-1">
                 Materi pemasaran ini dibuat berdasarkan data resmi tahap awal proyek Pranara Cilandak. Ilustrasi,
                 spesifikasi, dan harga dapat berubah sewaktu-waktu sesuai kebijakan pengembang.

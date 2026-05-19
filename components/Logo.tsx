@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 // import { useScroll } from "@/hooks/useSctoll";
 
 export default function Logo() {
@@ -7,10 +9,10 @@ export default function Logo() {
 
   return (
     // <div className={`${!isScrolled ? "text-white" : ""} text-center font-bold`}>
-    <div className={`text-center font-bold`}>
+    <Link href="/" className={`text-center font-bold`}>
       <span className="text-lg tracking-wider">ALDI</span>
       <br />
       <span>PROPERTY</span>
-    </div>
+    </Link>
   );
 }

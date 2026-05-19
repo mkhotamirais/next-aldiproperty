@@ -13,7 +13,7 @@ const lato = Lato({ subsets: ["latin"], variable: "--font-sans", weight: ["400",
 // };
 
 export const metadata: Metadata = {
-  title: "Pranara Cilandak | Hunian Mewah 3 Lantai di Jakarta Selatan",
+  title: "Aldi Property | Bantu Kamu Menemukan Hunian Terbaikmu",
   description:
     "Miliki townhouse eksklusif modern tropis di Cilandak, Jakarta Selatan. Lokasi strategis, fasilitas smart home, dan akses premium. Mulai Rp 4,7 Miliar.",
   keywords: [

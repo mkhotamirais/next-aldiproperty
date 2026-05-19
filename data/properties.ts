@@ -15,7 +15,7 @@ export interface Property {
 export const propertiesData: Property[] = [
   {
     id: "unit-01",
-    name: "Pranara Cilandak - Tipe A",
+    name: "Pranara Cilandak",
     type: "Corner Unit (Hook)",
     price: "Rp 6,0 Miliar",
     images: [
@@ -41,7 +41,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-02",
-    name: "Pranara Cilandak - Tipe B",
+    name: "One Eleven Kemang",
     type: "Standard Unit",
     price: "Rp 4,7 Miliar",
     images: [
@@ -60,7 +60,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-03",
-    name: "Pranara Premium - Tipe C",
+    name: "Palem Alfa Kebayoran",
     type: "Deluxe Executive",
     price: "Rp 5,2 Miliar",
     images: [
@@ -79,7 +79,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-04",
-    name: "Pranara Signature - Tipe D",
+    name: "Nivara Resort Townhouse at Kemang",
     type: "Premium Courtyard",
     price: "Rp 5,8 Miliar",
     images: [
@@ -99,7 +99,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-05",
-    name: "The Pranara Suite - Tipe E",
+    name: "North Kemang Huis",
     type: "Grand Master Suite",
     price: "Rp 5,5 Miliar",
     images: [
@@ -119,7 +119,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-06",
-    name: "Pranara Residence - Tipe F",
+    name: "Ananda Terrace Ciputat",
     type: "Urban Smart Home",
     price: "Rp 4,9 Miliar",
     images: [
@@ -139,7 +139,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-07",
-    name: "Pranara Villa - Tipe G",
+    name: "Sewu Lake House",
     type: "Tropical Resort Unit",
     price: "Rp 5,9 Miliar",
     images: [
@@ -159,7 +159,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-08",
-    name: "Pranara Heritage - Tipe H",
+    name: "Bintaro Jaya",
     type: "Classic Modern Loft",
     price: "Rp 5,1 Miliar",
     images: [
@@ -178,7 +178,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-09",
-    name: "Pranara Vista - Tipe I",
+    name: "Maison des Claire",
     type: "Skyline View Unit",
     price: "Rp 5,3 Miliar",
     images: [
@@ -198,7 +198,7 @@ export const propertiesData: Property[] = [
   },
   {
     id: "unit-10",
-    name: "Pranara Sanctuary - Tipe J",
+    name: "Terra Vivensa",
     type: "Ultimate Private Cluster",
     price: "Rp 6,5 Miliar",
     images: [
