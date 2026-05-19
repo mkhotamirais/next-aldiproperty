@@ -94,8 +94,8 @@ export default function Gallery() {
 
             <div
               ref={thumbnailContainerRef}
-              className="w-full flex gap-3 overflow-x-auto scrollbar-none py-1 px-1 scroll-smooth"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              className="w-full flex gap-3 overflow-x-auto py-1 px-1 scroll-smooth scrollbar-none [&::-webkit-scrollbar]:hidden [ms-overflow-style:none]"
+              //   style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {propertyImages.map((img, idx) => (
                 <button
