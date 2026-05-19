@@ -2,6 +2,7 @@ export const mainMenu = [
   { label: "Home", url: "/#top" },
   { label: "Location", url: "/#location" },
   { label: "Specifications", url: "/#specifications" },
+  { label: "Gallery", url: "/#gallery" },
   { label: "Why Choose Us?", url: "/#why-choose-us" },
 ];
 

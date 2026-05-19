@@ -17,7 +17,7 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-24 bg-white text-zinc-900 scroll-mt-20">
+    <section id="why-choose-us" className="py-24 bg-zinc-50 text-zinc-900 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Kolom Kiri: Judul Utama & Sub-teks emosional */}
