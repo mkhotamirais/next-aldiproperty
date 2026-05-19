@@ -9,9 +9,9 @@ import React from "react";
 export default function Home() {
   return (
     <main>
-      <HeroSec />
+      {/* <HeroSec />
       <LocationSec />
-      <SpecificationsSec />
+      <SpecificationsSec /> */}
       <Gallery />
       <WhyChooseUsSec />
       <ContactSec />
