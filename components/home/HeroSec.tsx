@@ -24,7 +24,7 @@ export default function HeroSec() {
 
       {/* 3. Konten Utama Hero */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full text-white mt-16">
-        <div className="max-w-3xl space-y-5">
+        <div className="max-w-3xl space-y-4">
           {/* Tagline / Kategori */}
           <span className="inline-block px-4 py-1.5 bg-amber-600 text-xs font-semibold tracking-widest uppercase rounded-full">
             Exclusive Townhouse
@@ -40,7 +40,7 @@ export default function HeroSec() {
           </p>
 
           {/* Info Singkat Harga & Lokasi */}
-          <div className="flex flex-wrap gap-6 pt-4 border-t border-white/20">
+          <div className="flex flex-wrap gap-4 pt-4 border-t border-white/20">
             <div>
               <p className="text-xs text-gray-400 uppercase tracking-wider">Harga Mulai</p>
               <p className="text-xl font-bold text-amber-400">Rp4,7 Miliar</p>
@@ -58,7 +58,7 @@ export default function HeroSec() {
           </div>
 
           {/* Action Button */}
-          <div className="pt-5 flex flex-wrap gap-4">
+          <div className="pt-4 flex flex-wrap gap-4">
             <a href="#gallery" className="btn-primary">
               Jelajahi Unit Hunian
             </a>
