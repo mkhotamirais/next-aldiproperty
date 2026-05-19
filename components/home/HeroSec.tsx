@@ -6,7 +6,6 @@ const heroImage = imageUrls.hero;
 export default function HeroSec() {
   return (
     <section className="py-10 md:py-0 relative w-full h-auto md:h-screen overflow-hidden flex items-center">
-      {/* 1. Next.js Optimized Background Image */}
       <Image
         src={heroImage}
         alt="Pranara Cilandak Townhouse"
