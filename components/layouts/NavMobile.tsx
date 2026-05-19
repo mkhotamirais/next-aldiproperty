@@ -4,12 +4,12 @@ import React from "react";
 import { MenuIcon, X } from "lucide-react";
 import { useMobileMenu } from "@/hooks/zustand-hooks/useMobileMenu";
 import { mainMenu } from "@/lib/common";
-import { useScroll } from "@/hooks/useSctoll";
+// import { useScroll } from "@/hooks/useSctoll";
 import ContactBtn from "./ContactBtn";
 
 export default function NavMobile() {
   const { open, setOpen } = useMobileMenu();
-  const isScrolled = useScroll(50);
+  // const isScrolled = useScroll(50);
 
   return (
     <div className="flex md:hidden items-center gap-4">
@@ -17,7 +17,8 @@ export default function NavMobile() {
       <button
         type="button"
         aria-label="mobile menu"
-        className={`${isScrolled ? "text-gray-700 hover:text-gray-900" : "text-white hover:text-gray-300"}`}
+        // className={`${isScrolled ? "text-gray-700 hover:text-gray-900" : "text-white hover:text-gray-300"}`}
+        className={`text-gray-700 hover:text-gray-900`}
         onClick={() => setOpen(true)}
       >
         <MenuIcon className="" />

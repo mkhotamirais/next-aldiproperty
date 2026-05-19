@@ -29,12 +29,12 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-white text-zinc-900 scroll-mt-20">
+    <section id="koleksi-hunian" className="py-24 pt-32 bg-white text-zinc-900 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-8 space-y-3">
           <span className="text-xs font-semibold uppercase tracking-widest text-amber-600">Arsitektur & Estetika</span>
-          <h2 className="text-3xl font-bold tracking-tight">Galeri Koleksi Hunian</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Koleksi Hunian</h2>
         </div>
 
         {/* PILIHAN 10 RUMAH (Tab Menu Horizontal) */}

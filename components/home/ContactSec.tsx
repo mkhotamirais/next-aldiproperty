@@ -12,7 +12,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white text-zinc-900 scroll-mt-20">
+    <section id="contact" className="py-24 pb-8 bg-white text-zinc-900 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
           {/* Kolom Kiri: Formulir Minat / Kontak */}

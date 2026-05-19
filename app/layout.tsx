@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layouts/Header";
-import Footer from "@/components/layouts/Footer";
+// import Footer from "@/components/layouts/Footer";
 import { cn } from "@/lib/utils";
 
 const lato = Lato({ subsets: ["latin"], variable: "--font-sans", weight: ["400", "700"] });
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         <div className="grow">{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
