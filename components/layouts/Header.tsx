@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header
       // className={`min-h-20 fixed top-0 left-0 right-0 w-full z-30 transition-all duration-300 ${isScrolled ? "bg-white" : "bg-transparent"}`}
-      className={`min-h-20 fixed top-0 left-0 right-0 w-full z-30 transition-all duration-300 bg-white border-b border-gray-200`}
+      className={`min-h-20 fixed top-0 left-0 right-0 w-full z-30 transition-all duration-300 bg-white`}
     >
       <div className="min-h-20 container max-w-6xl! flex items-center justify-between">
         <Logo />
