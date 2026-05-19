@@ -67,12 +67,12 @@ export default function Gallery() {
         {/* KONTANER UTAMA (Kotak Persegi Panjang Berdiri Ke Atas) */}
         <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 md:p-6 shadow-sm space-y-5">
           {/* Info Singkat Unit Rumah Terpilih */}
-          <div className="flex flex-wrap justify-between items-center gap-2 pb-3 border-b border-zinc-200/60">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-between items-start sm:items-center gap-2 pb-3 border-b border-zinc-200/60">
             <div>
               <span className="text-xs text-zinc-400 uppercase tracking-wider font-medium">{currentProperty.type}</span>
               <h3 className="text-xl font-bold text-zinc-800 tracking-tight">{currentProperty.name}</h3>
             </div>
-            <div className="text-right">
+            <div className="">
               <span className="text-xs text-zinc-400 uppercase block">Mulai Dari</span>
               <span className="text-lg font-extrabold text-amber-600">{currentProperty.price}</span>
             </div>
