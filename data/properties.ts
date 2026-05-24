@@ -4,215 +4,130 @@ export interface PropertyImage {
   details: string;
 }
 
-export interface Property {
+export interface ProjectData {
   id: string;
   name: string;
-  type: string;
-  price: string;
+  address: string;
+  mapsUrl: string;
+  priceRange: string;
+  descriptions: string[];
   images: PropertyImage[];
 }
 
-export const propertiesData: Property[] = [
+export const projectsData: ProjectData[] = [
   {
-    id: "unit-01",
+    id: "pranara-cilandak",
     name: "Pranara Cilandak",
-    type: "Corner Unit (Hook)",
-    price: "Rp 6,0 Miliar",
+    address:
+      "Jl. Margasatwa Raya No.18, RT.9/RW.2, Pd. Labu, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12450",
+    mapsUrl: "https://maps.app.goo.gl/FjpxiVSuztq1gfSw5?g_st=ac",
+    priceRange: "Rp 4,7M - 6M",
+    descriptions: [
+      "Pranara Cilandak menghadirkan 17 hunian eksklusif di kawasan premium Jakarta Selatan.",
+      "Dekat Pondok Indah, TB Simatupang, dan berbagai lifestyle destination pilihan.",
+      "Lingkungan yang tenang dan private menghadirkan kenyamanan yang terasa lebih personal.",
+      "Dirancang dengan karakter yang refined, hangat, dan timeless dalam setiap detailnya.",
+      "Sebuah alamat yang merepresentasikan hidup modern dengan cara yang lebih elegan.",
+    ],
     images: [
       {
-        src: "https://cdn.pixabay.com/photo/2017/07/08/02/16/house-2483336_1280.jpg",
-        alt: "Fasad Eksterior Tipe A",
-        details:
-          "Fasad unit hook dengan area taman samping yang lebih luas dan eksposur cahaya maksimal dari dua sisi bangunan.",
+        src: "/images/pranara-cilandak-1.jpeg",
+        alt: "Ruang Utama Pranara",
+        details: "Desain eksterior refined dengan karakter hangat nan timeless.",
       },
       {
-        src: "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg",
-        alt: "Interior Ruang Tamu Tipe A",
-        details:
-          "Ruang tamu utama dengan luas maksimal, dirancang untuk menyambut kolega dengan impresi kemewahan modern.",
+        src: "/images/pranara-cilandak-2.jpeg",
+        alt: "Ruang Keluarga Premium",
+        details: "Interior lapang dengan bukaan kaca besar untuk pencahayaan alami.",
       },
       {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg",
-        alt: "Tampak Samping & Carport",
-        details:
-          "Area carport yang terintegrasi langsung dengan akses halaman samping, memudahkan aktivitas luar ruangan keluarga.",
+        src: "/images/pranara-cilandak-3.jpeg",
+        alt: "Master Bedroom",
+        details: "Kamar tidur utama yang private, dirancang untuk kenyamanan personal.",
       },
     ],
   },
   {
-    id: "unit-02",
-    name: "One Eleven Kemang",
-    type: "Standard Unit",
-    price: "Rp 4,7 Miliar",
+    id: "nivara-wijaya",
+    name: "Nivara Resort Wijaya",
+    address:
+      "Jl. Wijaya Timur Raya No.7, RT.15/RW.2, Kuningan Bar., Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170",
+    mapsUrl: "https://maps.app.goo.gl/66RoSdWxXNuofVNH6?g_st=ac",
+    priceRange: "Rp 7M - 8,4M",
+    descriptions: [
+      "Nivara Resort Townhouse Wijaya menghadirkan hunian premium eksklusif di Jakarta Selatan.",
+      "Hanya tersedia 18 unit dengan konsep resort living modern.",
+      "Setiap rumah dilengkapi private elevator dan desain indoor-outdoor yang elegan.",
+      "Fasilitas premium seperti jacuzzi, sauna, gym, dan pool access menunjang kenyamanan penghuni.",
+      "Lokasinya strategis, dekat SCBD, Mega Kuningan, dan pusat lifestyle Jakarta Selatan.",
+    ],
     images: [
       {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg",
-        alt: "Tampak Depan Tipe B",
-        details:
-          "Desain simetris minimalis yang efisien namun tetap mempertahankan ruang carport untuk dua mobil besar secara fungsional.",
+        src: "/images/nivara-resort-1.jpeg",
+        alt: "Fasad Resort Living",
+        details: "Eksterior bernuansa resort mewah di tengah jantung kota Jakarta Selatan.",
       },
       {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/00/23/architecture-1866554_1280.jpg",
-        alt: "Dapur Minimalis Tipe B",
-        details: "Dapur bersih dengan konsep minimalis fungsional yang terhubung langsung ke ruang makan utama.",
+        src: "/images/nivara-resort-2.jpeg",
+        alt: "Private Elevator Area",
+        details: "Akses lift pribadi yang memberikan kemudahan mobilitas antar lantai.",
+      },
+      {
+        src: "/images/nivara-resort-3.jpeg",
+        alt: "Fasilitas Kolam Renang",
+        details: "Pool access langsung yang memberikan kesegaran ala resort bintang lima.",
       },
     ],
   },
   {
-    id: "unit-03",
-    name: "Palem Alfa Kebayoran",
-    type: "Deluxe Executive",
-    price: "Rp 5,2 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2017/06/05/19/05/house-2374925_1280.jpg",
-        alt: "Fasad Kontemporer Tipe C",
-        details:
-          "Fasad mewah bertekstur batu alam dengan dominasi kaca besar untuk menciptakan sirkulasi udara yang menyegarkan.",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg",
-        alt: "Dapur & Island Table Tipe C",
-        details: "Area memasak yang luas dilengkapi dengan meja pulau (island table) marmer bergaya urban minimalis.",
-      },
-    ],
-  },
-  {
-    id: "unit-04",
-    name: "Nivara Resort Townhouse at Kemang",
-    type: "Premium Courtyard",
-    price: "Rp 5,8 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/00/23/architecture-1866554_1280.jpg",
-        alt: "Fasad Simetris Tipe D",
-        details:
-          "Arsitektur modern simetris yang menekankan aspek privasi tinggi dengan penataan taman dalam (inner courtyard).",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2020/03/09/23/59/villa-4917454_1280.jpg",
-        alt: "Balkon Atas Tipe D",
-        details:
-          "Balkon semi-terbuka di lantai tiga yang ideal sebagai tempat bersantai privat sambil menikmati langit malam perkotaan.",
-      },
-    ],
-  },
-  {
-    id: "unit-05",
+    id: "north-kemang",
     name: "North Kemang Huis",
-    type: "Grand Master Suite",
-    price: "Rp 5,5 Miliar",
+    address:
+      "Jl. Kemang Utara No.32, RT.1/RW.5, Bangka, Kec. Mampang Prpt., Jakarta, Daerah Khusus Ibukota Jakarta 12730",
+    mapsUrl: "https://maps.app.goo.gl/iv2azuX8GXduho148",
+    priceRange: "Rp 6M - 10M",
+    descriptions: [
+      "North Kemang Huis menghadirkan keseimbangan antara konektivitas kota dan kenyamanan tinggal yang lebih private di kawasan Kemang.",
+      "Berlokasi strategis dengan akses cepat menuju SCBD, Kuningan, Sudirman, dan TB Simatupang.",
+      "Hunian ini dirancang untuk gaya hidup urban yang dinamis tanpa kehilangan ketenangan saat kembali ke rumah.",
+      "Dengan karakter desain yang refined dan suasana yang intimate, North Kemang Huis menjadi pilihan ideal bagi mereka yang mencari kenyamanan modern di salah satu area paling desirable di Jakarta Selatan.",
+    ],
     images: [
       {
-        src: "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg",
-        alt: "Tampak Eksklusif Lantai Bawah",
-        details:
-          "Tata ruang lantai dasar yang memaksimalkan area komunal tanpa dinding pembatas, menciptakan kesan ruang yang tak terbatas.",
+        src: "/images/north-kemang-huis-1.jpeg",
+        alt: "Arsitektur Refined Kemang",
+        details: "Desain arsitektur modern kontemporer yang menyatu dengan keasrian Kemang.",
       },
       {
-        src: "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg",
-        alt: "Master Bedroom Tipe E",
-        details:
-          "Kamar tidur utama super luas dengan pencahayaan dramatis, dilengkapi ruang pakaian khusus (walk-in closet).",
+        src: "/images/north-kemang-huis-2.jpeg",
+        alt: "Intimate Living Space",
+        details: "Tata ruang keluarga yang hangat, sempurna untuk gaya hidup urban.",
       },
     ],
   },
   {
-    id: "unit-06",
-    name: "Ananda Terrace Ciputat",
-    type: "Urban Smart Home",
-    price: "Rp 4,9 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2020/03/09/23/59/villa-4917454_1280.jpg",
-        alt: "Eksterior Minimalis Tipe F",
-        details:
-          "Unit modern yang dirancang untuk keluarga muda, mengintegrasikan sistem rumah pintar (smart home) di setiap sudut.",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg",
-        alt: "Ruang Kerja Privat Tipe F",
-        details:
-          "Sudut ruangan lantai dua yang dialokasikan khusus sebagai ruang kerja atau ruang belajar tenang yang fungsional.",
-      },
+    id: "umala-homes",
+    name: "Umala Homes",
+    address:
+      "Jl. Senopati No.45, RT.6/RW.3, Selong, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12110",
+    mapsUrl: "https://maps.google.com",
+    priceRange: "Rp 12M - 15M",
+    descriptions: [
+      "Umala Homes mendefinisikan ulang kemewahan urban di lokasi paling bergengsi Kebayoran Baru.",
+      "Menyajikan 10 unit terbatas bergaya arsitektur klasik modern dengan sentuhan interior Eropa oriental.",
+      "Dilengkapi dengan sistem Smart Home bersertifikasi internasional dan keamanan berlapis 24 jam.",
+      "Sangat cocok bagi para profesional papan atas yang mendambakan gengsi, privasi penuh, dan aksesibilitas tanpa batas ke SCBD.",
     ],
-  },
-  {
-    id: "unit-07",
-    name: "Sewu Lake House",
-    type: "Tropical Resort Unit",
-    price: "Rp 5,9 Miliar",
     images: [
       {
-        src: "https://cdn.pixabay.com/photo/2017/07/08/02/16/house-2483336_1280.jpg",
-        alt: "Fasad Bernuansa Resort",
-        details:
-          "Mengadopsi arsitektur vila tropis dengan sirkulasi udara silang (cross ventilation) yang membuat rumah selalu sejuk.",
+        src: "/images/umala-homes-1.jpeg",
+        alt: "Fasad Klasik Modern",
+        details: "Desain arsitektur klasik modern dengan sentuhan interior Eropa oriental.",
       },
       {
-        src: "https://cdn.pixabay.com/photo/2017/06/05/19/05/house-2374925_1280.jpg",
-        alt: "Ruang Makan Terbuka Tipe G",
-        details:
-          "Area makan eksklusif yang menghadap langsung ke kolam ikan mini atau taman vertikal di area belakang.",
-      },
-    ],
-  },
-  {
-    id: "unit-08",
-    name: "Bintaro Jaya",
-    type: "Classic Modern Loft",
-    price: "Rp 5,1 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg",
-        alt: "Tampak Depan Neo-Klasik",
-        details:
-          "Perpaduan menawan antara garis arsitektur klasik yang kokoh dengan fungsionalitas tata ruang modern abad 21.",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg",
-        alt: "Ruang Keluarga Lantai Mezzanine",
-        details: "Pemanfaatan struktur langit-langit tinggi menjadi ruang mezzanine serbaguna untuk area bermain anak.",
-      },
-    ],
-  },
-  {
-    id: "unit-09",
-    name: "Maison des Claire",
-    type: "Skyline View Unit",
-    price: "Rp 5,3 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2017/06/05/19/05/house-2374925_1280.jpg",
-        alt: "Fasad Kaca Transparan Tipe I",
-        details:
-          "Penggunaan panel kaca struktural setinggi penuh yang memberikan pemandangan lepas ke arah lanskap kota.",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2020/03/09/23/59/villa-4917454_1280.jpg",
-        alt: "Area Santai Rooftop Tipe I",
-        details:
-          "Sudut bersantai komunal di area teratas bangunan, dirancang untuk menikmati matahari terbenam kota Jakarta.",
-      },
-    ],
-  },
-  {
-    id: "unit-10",
-    name: "Terra Vivensa",
-    type: "Ultimate Private Cluster",
-    price: "Rp 6,5 Miliar",
-    images: [
-      {
-        src: "https://cdn.pixabay.com/photo/2017/07/08/02/16/house-2483336_1280.jpg",
-        alt: "Fasad Terbesar Tipe Paling Mewah",
-        details:
-          "Koleksi unit terbesar dan paling privat di Pranara Cilandak, menawarkan spesifikasi material tertinggi di kelasnya.",
-      },
-      {
-        src: "https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_1280.jpg",
-        alt: "Dapur Kering & Wet Kitchen Tipe J",
-        details:
-          "Fasilitas dapur ganda super lengkap dengan kelengkapan kabinet kustom (custom cabinetry) standar internasional.",
+        src: "/images/umala-homes-2.jpeg",
+        alt: "Interior Mewah",
+        details: "Interior mewah dengan sistem Smart Home bersertifikasi internasional.",
       },
     ],
   },

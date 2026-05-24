@@ -21,10 +21,11 @@ export default function Contact() {
               <span className="text-xs font-semibold uppercase tracking-widest text-amber-600">
                 Kunjungan & Informasi
               </span>
-              <h2 className="text-3xl font-bold tracking-tight">Dapatkan Brosur & Pricelist Resmi</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Exclusive Brochure & Pricing Information</h2>
               <p className="text-sm text-zinc-500 font-light">
-                Isi formulir di bawah ini. Konsultan properti kami dari Pranara Land akan segera menghubungi Anda untuk
-                memberikan detail unit, ketersediaan, dan jadwal survei lokasi.
+                Silakan lengkapi formulir berikut. Konsultan properti kami akan dengan senang hati menghubungi Anda
+                untuk memberikan informasi eksklusif terkait pilihan unit, ketersediaan terkini, serta pengaturan
+                private site visit sesuai kenyamanan Anda
               </p>
             </div>
 
@@ -121,8 +122,8 @@ export default function Contact() {
             <div className="text-xs text-zinc-400 font-light leading-relaxed">
               <p>© 2026 Aldi Property. Seluruh hak cipta dilindungi undang-undang.</p>
               <p className="mt-1">
-                Materi pemasaran ini dibuat berdasarkan data resmi tahap awal proyek Pranara Cilandak. Ilustrasi,
-                spesifikasi, dan harga dapat berubah sewaktu-waktu sesuai kebijakan pengembang.
+                Seluruh informasi dalam materi ini bersifat preliminary dan dapat berubah sewaktu-waktu sesuai kebijakan
+                serta pengembangan terbaru dari developer
               </p>
             </div>
           </div>
