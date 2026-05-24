@@ -14,6 +14,9 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
   const [showThumbLeftArrow, setShowThumbLeftArrow] = useState(false);
   const [showThumbRightArrow, setShowThumbRightArrow] = useState(false);
 
+  // State untuk mengontrol Modal Popup Gambar
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const thumbnailContainerRef = useRef<HTMLDivElement>(null);
   const projectImages = project.images || [];
 
@@ -36,6 +39,18 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
     }
   };
 
+  // Kunci scroll layar utama ketika modal sedang terbuka
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
+
   useEffect(() => {
     if (projectImages.length > 0) {
       handleThumbScrollStatus();
@@ -45,13 +60,14 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
   }, [projectImages.length]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center py-12 border-b border-zinc-100 last:border-b-0">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
       {/* BLOK A: JUDUL & HARGA */}
       <div className={`order-1 lg:col-span-5 space-y-1.5 ${isEven ? "lg:order-last" : "lg:order-first"}`}>
         <span className="text-xs font-bold uppercase tracking-widest text-amber-600 block">Hunian 0{index + 1}</span>
         <h3 className="text-2xl font-bold text-zinc-900 tracking-tight md:text-3xl">{project.name}</h3>
         <p className="text-lg font-extrabold text-amber-600 pt-0.5">{project.priceRange}</p>
 
+        {/* Desktop Only Details */}
         <div className="hidden lg:block space-y-4 pt-4">
           <div className="space-y-3 text-zinc-600 font-light text-sm leading-relaxed border-l-2 border-zinc-200 pl-4 py-0.5">
             {project.descriptions.map((desc, idx) => (
@@ -75,17 +91,13 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
         </div>
       </div>
 
-      {/* BLOK B: GALERI VISUAL / PLACEHOLDER NO IMAGE */}
+      {/* BLOK B: GALERI VISUAL / PLACEHOLDER */}
       <div
-        className={`order-2 lg:col-span-7 bg-zinc-50 border border-zinc-200 rounded-2xl p-4 md:p-5 shadow-xs ${
-          isEven ? "lg:order-first" : "lg:order-last"
-        }`}
+        className={`order-2 lg:col-span-7 bg-zinc-50 border border-zinc-200 rounded-2xl p-4 md:p-5 shadow-xs ${isEven ? "lg:order-first" : "lg:order-last"}`}
       >
         {projectImages.length === 0 ? (
-          /* TAMPILAN NO IMAGE PREMIUM JIKA DATA GAMBAR KOSONG */
           <div className="w-full h-72 md:h-96 rounded-xl bg-zinc-100/80 border border-zinc-200/60 border-dashed flex flex-col items-center justify-center text-center p-6 space-y-3 select-none">
             <div className="w-14 h-14 bg-zinc-200 text-zinc-400 rounded-full flex items-center justify-center shadow-xs">
-              {/* SVG Icon Outline Rumah dengan Silang Merujuk pada No-Image */}
               <svg
                 className="w-7 h-7 stroke-current fill-none"
                 viewBox="0 0 24 24"
@@ -106,28 +118,35 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
             </div>
           </div>
         ) : (
-          /* TAMPILAN GALERI ASLI JIKA DATA GAMBAR ADA */
           <div className="space-y-4">
-            <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden bg-zinc-200 border border-zinc-100">
+            {/* Gambar Besar Utama - Sekarang Bisa Diklik Untuk Membuka Modal */}
+            <div
+              onClick={() => setIsModalOpen(true)}
+              className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden bg-zinc-200 border border-zinc-100 cursor-zoom-in group/mainimg"
+            >
               <Image
                 src={projectImages[activeImgIdx]?.src || ""}
                 alt={projectImages[activeImgIdx]?.alt || ""}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover/mainimg:scale-102"
                 unoptimized
+                loading="eager"
               />
+              {/* Overlay Indikator Zoom Penting */}
+              <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-xs text-white p-2 rounded-lg opacity-0 group-hover/mainimg:opacity-100 transition-opacity duration-200 text-xs flex items-center gap-1">
+                🔍 Perbesar Foto
+              </div>
               <div className="absolute bottom-0 left-0 w-full bg-linear-to-t from-black/60 to-transparent p-4">
                 <p className="text-white text-xs font-medium tracking-wide">{projectImages[activeImgIdx]?.alt}</p>
               </div>
             </div>
 
+            {/* Navigasi Baris Thumbnail */}
             <div className="relative group/thumb">
               <button
                 type="button"
                 onClick={() => scrollThumbnails("left")}
-                className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/95 border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 shadow-md hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-all duration-200 ${
-                  showThumbLeftArrow ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                }`}
+                className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/95 border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 shadow-md hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-all duration-200 ${showThumbLeftArrow ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
                 aria-label="Scroll Left"
               >
                 ←
@@ -144,13 +163,9 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
                     type="button"
                     key={idx}
                     onClick={() => setActiveImgIdx(idx)}
-                    className={`relative w-18 h-12 md:w-24 md:h-16 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
-                      activeImgIdx === idx
-                        ? "border-amber-600 ring-2 ring-amber-600/20 scale-95"
-                        : "border-zinc-200 opacity-60 hover:opacity-100"
-                    }`}
+                    className={`relative w-18 h-12 md:w-24 md:h-16 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${activeImgIdx === idx ? "border-amber-600 ring-2 ring-amber-600/20 scale-95" : "border-zinc-200 opacity-60 hover:opacity-100"}`}
                   >
-                    <Image src={img.src} alt={img.alt} fill className="object-cover" unoptimized />
+                    <Image src={img.src} alt={img.alt} fill className="object-cover" unoptimized loading="eager" />
                   </button>
                 ))}
               </div>
@@ -158,9 +173,7 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
               <button
                 type="button"
                 onClick={() => scrollThumbnails("right")}
-                className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/95 border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 shadow-md hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-all duration-200 ${
-                  showThumbRightArrow ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-                }`}
+                className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/95 border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 shadow-md hover:bg-amber-600 hover:text-white hover:border-amber-600 transition-all duration-200 ${showThumbRightArrow ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
                 aria-label="Scroll Right"
               >
                 →
@@ -192,6 +205,49 @@ export default function PropertyRow({ project, index }: PropertyRowProps) {
           </a>
         </div>
       </div>
+
+      {/* ==========================================
+          MODAL LIGHTBOX COMPONENT (FULL RESOLUSI)
+         ========================================== */}
+      {isModalOpen && projectImages.length > 0 && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-10 animate-fadeIn"
+          onClick={() => setIsModalOpen(false)} // Klik di area hitam mana saja untuk menutup modal
+        >
+          {/* Tombol Close Silang di Kanan Atas */}
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(false)}
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-200 z-50"
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
+
+          {/* Kontainer Utama Gambar di Dalam Modal */}
+          <div
+            className="relative w-full max-w-5xl h-[70vh] md:h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()} // Mencegah modal tertutup ketika area gambar yang diklik
+          >
+            <Image
+              src={projectImages[activeImgIdx].src}
+              alt={projectImages[activeImgIdx].alt}
+              fill
+              className="object-contain" // ANTI TERPOTONG: Menampilkan rasio gambar 100% utuh
+              unoptimized
+              loading="eager"
+            />
+          </div>
+
+          {/* Caption Keterangan Detail Foto di Bagian Bawah Modal */}
+          <div className="text-center mt-4 max-w-xl space-y-1 px-4 select-none" onClick={(e) => e.stopPropagation()}>
+            <p className="text-white font-medium text-sm md:text-base">{projectImages[activeImgIdx].alt}</p>
+            {projectImages[activeImgIdx].details && (
+              <p className="text-zinc-400 text-xs font-light">{projectImages[activeImgIdx].details}</p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
